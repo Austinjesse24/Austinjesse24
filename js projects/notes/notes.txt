@@ -1,0 +1,14 @@
+notes for the js clock
+In this code, we have a JavaScript function called updateClock that handles updating the time display on a webpage.
+The function updateClock begins by getting the current date and time using new Date(). This creates a new Date object, 
+named now, which stores the current date and time down to the second.
+Next, we extract the hours, minutes, and seconds from now. We use JavaScript's getHours(), getMinutes(), and getSeconds() 
+methods to retrieve these values.
+To make sure each time value is always two digits, we use padStart(2, '0'). This adds a "0" to the beginning of any single-digit number.
+ For example, if the seconds are "5," it will be formatted as "05."
+We then combine hours, minutes, and seconds into a single string in the format HH:MM:SS using template literals. This final time string 
+is displayed in the HTML element with the id clock.
+After defining the updateClock function, we call it once initially to display the time immediately when the page loads.
+Lastly, we set an interval using setInterval(updateClock, 1000). This calls updateClock every 1000 milliseconds, or one second, to keep 
+the clock updating in real time.
+

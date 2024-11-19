@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Game</title>
+    <link rel="stylesheet" href="/assets/css/whackamole.css">
+</head>
+<body>
+    <h1>Whack-a-Mole</h1>
+    <p>Score: <span id="score">0</span></p>
+    <div class="game-grid">
+        <div class="hole1" id="hole1" onclick="whackMole(1)"></div>
+        <div class="hole2" id="hole2" onclick="whackMole(2)"></div>
+        <div class="hole3" id="hole3" onclick="whackMole(3)"></div>
+        <div class="hole4" id="hole4" onclick="whackMole(4)"></div>
+        <div class="hole5" id="hole5" onclick="whackMole(5)"></div>
+        <div class="hole6" id="hole6" onclick="whackMole(6)"></div>
+        <div class="hole7" id="hole7" onclick="whackMole(7)"></div>
+        <div class="hole8" id="hole8" onclick="whackMole(8)"></div>
+        <div class="hole9" id="hole9" onclick="whackMole(9)"></div>
+    </div>
+    <button onclick="startGame()">Start Game</button>
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <!-- Overlay for Game Over -->
+    <div id="overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2 id="overlay-text">Game Over!</h2>
+            <p>Your final score: <span id="final-score"></span></p>
+            <button onclick="startGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="/assets/js/whackamole.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(97, 138, 254, 0.9);
+}
+
+.container-main{
+    width: 450px;
+    background: #fafafa;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 20px 5px rgb(0,0,0,0.15);
+}
+
+.containerHW{
+    display: flex;
+    margin: 15px;
+}
+
+h1{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 0;
+}
+
+.content{
+    padding: 0 30px;
+}
+
+.input{
+    background:#fff;
+    box-shadow: 0px 0px 95px -30px rgb(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    width: 420px;
+    margin-left: 15px;
+}
+
+.input label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.input input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 50%;
+    text-align: center;
+    font-size: 28px;
+    font-family: "nunito";
+}
+
+.inputW {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgb(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.inputW label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.inputW input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 50%;
+    text-align: center;
+    font-size: 28px;
+    font-family: "nunito";
+}
+
+.inputH {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgb(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.inputH label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.inputH input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 50%;
+    text-align: center;
+    font-size: 28px;
+    font-family: "nunito";
+}
+
+#submit{
+    cursor: pointer;
+    font-family: "nunito";
+    color: #fff;
+    background:  #4f7df9;
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 12px 0;
+    width: 90%;
+    outline: none;
+    border: none;
+    transition:  all 0.5s;
+}
+
+#submit:hover{
+    background: #0044ff;
+}
+
+.results{
+    padding: 10px 20px;
+}
+
+.results p{
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+#results{
+    font-weight: 900;
+    font-size: 25px;
+    color: #4f7df9;
+    margin-bottom: 10px;
+    background: #eaeaea;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 55px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#comment{
+    color: #4f7df9;
+    font-weight: 800;
+}
+
+.comment{
+    display: none;
+    border: dashed 1px;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: -10px;
+    margin-left: 20px;
+    padding-bottom: 13px;
+}
+
+.footer-text{
+    text-decoration: none;
+    color: rgb(40, 40, 40, 0.8);
+    font-family: sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.footer-text:hover{
+    color: rgba(40,40,40,0.8);
+}
+
+
+
+/* css */
+
+.gender {
+    display: flex;
+    gap: 20px; /* Adjust spacing between options */
+    background-color: #fff;
+    margin: 19px;
+    border-radius: 10px;
+    padding: 12px;
+    /* margin-bottom: 10px; */
+}
+
+.container {
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkmark */
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    margin-left: 70px;
+}
+
+.container input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+    
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Size of the checkmark */
+    width: 20px; /* Size of the checkmark */
+    background-color: #d6d3d3; /* Background for unselected state */
+    border-radius: 50%; /* Make it circular */
+}
+
+.container input[type="radio"]:checked + .checkmark {
+    background-color: #2196F3; /* Background for selected state */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input[type="radio"]:checked + .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 7px; /* Adjust position of the checkmark */
+    top: 3px; /* Adjust position of the checkmark */
+    width: 5px; /* Size of the inner checkmark */
+    height: 10px; /* Size of the inner checkmark */
+    border: solid rgb(241, 239, 239); /* Color of the checkmark */
+    border-width: 0 2px 2px 0; /* Shape of the checkmark */
+    transform: rotate(45deg); /* Rotate to make it look like a check */
+}
+
+.text {
+    margin-left: 10px; /* Space between text and checkmark */
+}
+
+  /* Basic modal styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.model-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    
+}
+@media (max-width: 700px){
+    .box{
+        width: 380px;
+    }
+
+    .container-main{
+        width: 390px;
+    }
+
+    .input{
+        width: 360px;
+    }
+
+    .input-label{
+        font-size: 18px;
+    }
+
+    .input-label, .inputW label{
+        font-size: 14px;
+    }
+
+    .input-label, .inputH input .inputW input{
+        font-size: 24px;
+    }
+
+    .model-content{
+        width: 380px;
+    }
+
+    
+}

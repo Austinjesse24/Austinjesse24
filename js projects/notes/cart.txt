@@ -1,0 +1,104 @@
+
+Here's a breakdown of the JavaScript code in script.js:
+
+1. Global Variable: cart
+javascript
+Copy code
+let cart = [];
+Purpose: This empty array will hold objects representing the items that the user adds to their cart. Each item will have properties like id, name, price, and quantity.
+2. Function: addToCart(id, name, price)
+javascript
+Copy code
+function addToCart(id, name, price) {
+    const productIndex = cart.findIndex(item => item.id === id);
+    if (productIndex > -1) {
+        cart[productIndex].quantity += 1;
+    } else {
+        cart.push({ id, name, price, quantity: 1 });
+    }
+    updateCartUI();
+}
+Purpose: Adds an item to the cart. If the item is already in the cart, it increases its quantity.
+Explanation:
+cart.findIndex(item => item.id === id): Checks if an item with the same id is already in the cart. If it is, productIndex will hold the index of that item; if not, productIndex will be -1.
+if (productIndex > -1): If the item is already in the cart, increase its quantity by 1.
+else: If the item is not in the cart, push a new object representing the item to the cart array.
+updateCartUI(): Calls another function to update the cart display on the page.
+3. Function: updateCartUI()
+javascript
+Copy code
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    cartItemsContainer.innerHTML = '';
+    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <p>${item.name} - $${item.price} x ${item.quantity}</p>
+            <button onclick="removeFromCart(${item.id})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+    });
+}
+Purpose: Updates the cart UI, displaying the items in the cart and updating the total item count.
+Explanation:
+cartItemsContainer.innerHTML = '';: Clears the cart display so we can repopulate it with updated items.
+cartCount.textContent = cart.reduce(...): Calculates the total number of items in the cart and displays it. reduce adds up the quantity of each item.
+cart.forEach(item => {...}): Loops through each item in the cart array and creates a new div for each item with the item name, price, quantity, and a "Remove" button.
+cartItemsContainer.appendChild(cartItem);: Adds each item div to the cart dropdown display.
+4. Function: removeFromCart(id)
+javascript
+Copy code
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCartUI();
+}
+Purpose: Removes an item from the cart and updates the cart display.
+Explanation:
+cart.filter(item => item.id !== id): Creates a new cart array with all items except the one matching the provided id.
+updateCartUI(): Refreshes the cart display to reflect the updated cart.
+5. Function: toggleCart()
+javascript
+Copy code
+function toggleCart() {
+    document.getElementById('cart-dropdown').classList.toggle('active');
+}
+Purpose: Shows or hides the cart dropdown when the cart button is clicked.
+Explanation:
+classList.toggle('active'): Adds or removes the active class from the cart dropdown. This class controls whether the dropdown is visible.
+6. Function: checkout()
+javascript
+Copy code
+function checkout() {
+    if (cart.length > 0) {
+        alert('Proceeding to checkout!');
+        cart = [];
+        updateCartUI();
+        toggleCart();
+    } else {
+        alert('Your cart is empty!');
+    }
+}
+Purpose: Handles the checkout process.
+Explanation:
+if (cart.length > 0): Checks if there are items in the cart. If there are:
+alert('Proceeding to checkout!'): Shows a checkout confirmation.
+cart = [];: Clears the cart.
+updateCartUI();: Updates the cart display to show it’s empty.
+toggleCart();: Closes the cart dropdown.
+else: If the cart is empty, it shows an alert telling the user.
+This code enables basic cart functionality by managing items in a cart array, updating the cart's HTML when items are added or removed, and handling simple checkout. Let me know if you have questions on any part!
+
+
+
+
+
+
+
+
+
+
+https://i.namu.wiki/i/-o02bOhyGzo_XqaO8VQHx9pHPOyEQ_kEqi4xF5YDzuitmVqkpYoPVWclgFhPK0ErGWpsaq_nDY6ulvgAeXUMZJARYQyDL7z2xH4QT4yiiPQUbZd9xR-2-G5eJ2QidzQ5Co2Utt3cKbl-XTRsn2-uXg.jpg

@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #0c0c0c;  
+}
+
+.clock {
+    border: 5px solid lime;
+    border-radius: 8px;
+    align-items: center;
+    font-size: 60px;
+    padding: 30px;
+    color: lime;
+}
+

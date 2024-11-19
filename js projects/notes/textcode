@@ -1,0 +1,93 @@
+.gender{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0,0,0,0.15);
+}
+
+.gender .container{
+    display: block;
+    position: relative;
+    padding: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 7px;
+    /* -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+}
+
+#m{
+    border-radius: 50%;
+    width: 15%;
+}
+
+#f{
+    border-radius: 50%;
+    width: 15%;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.gender .container:hover input ~ .checkmark{
+    background: #ccc;
+}
+
+.gender .container input:checked ~ .checkmark{
+    background: #2196f3;
+}
+
+.checkmark:after{
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.gender .container input:checked ~ .checkmark:after{
+    display: block;
+}
+
+.gender .container .checkmark:after{
+    top:9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+
+
+
+
+
+<div class="gender">
+            <div class="container">
+                <input for="radio" name="radio" type="radio" id="m"><p class="text">Male</p>
+                <span class="checkmark" id="checkmark"></span>
+            </div>
+
+            <div class="container">
+                <input for="radio" name="radio" type="radio" id="f"><p class="text">Female</p>
+                <span class="checkmark" id="checkmark"></span>
+            </div>
+        </div>
+
+
+        https://media.geeksforgeeks.org/wp-content/uploads/20240326122916/image11.jpg
+
+        https://media.geeksforgeeks.org/wp-content/uploads/20240326122915/image8.jpg
+
+        https://media.geeksforgeeks.org/wp-content/uploads/20240326121955/image.jpg
